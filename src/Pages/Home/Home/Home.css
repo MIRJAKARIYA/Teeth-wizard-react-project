@@ -3,6 +3,12 @@
     margin: 50px auto;
     border-radius: 10px;
 }
+.show-button{
+    display: block;
+    margin: 15px auto;
+    border: none;
+    background-color: y;
+}
 @media screen and (max-width: 767px) {
     .services-container{
         width: 95%;

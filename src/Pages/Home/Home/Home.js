@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import './Home.css';
 import useServices from '../../../useServices';
@@ -6,6 +6,16 @@ import SingleService from '../../Shared/SingleService/SingleService';
 import './Home.css';
 const Home = () => {
     const services = useServices();
+    const [showAll, setShowAll] = useState(false);
+    const [showData, setShowData] = useState([]);
+    useEffect(()=>{
+        if(showAll){
+            setShowData(services)
+        }
+        else{
+            setShowData(services.slice(0,4))
+        }
+    },[showAll,services])
     console.log(services);
     return (
         <div>
@@ -14,9 +24,10 @@ const Home = () => {
                 <h1 className='text-center mb-5'>Services</h1>
                 <div className='row gy-4'>
                 {
-                    services.map(service => <SingleService key={service.id} service={service}></SingleService>)
+                    showData.map(service => <SingleService key={service.id} service={service}></SingleService>)
                 }
                 </div>
+                <button className='show-button' onClick={()=> setShowAll(!showAll)}>{showAll?'Show less': 'Show more'}</button>
             </div>
         </div>
     );
