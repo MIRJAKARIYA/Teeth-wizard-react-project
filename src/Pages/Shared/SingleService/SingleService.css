@@ -1,0 +1,17 @@
+.card-container{
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.479);
+}
+.card-image{
+    height: 250px;
+    border-radius: 5px;
+    width: 100%;
+}
+.checkout-more-button{
+    background-color: #035397;
+    border: none;
+    color: white;
+    padding: 10px 5px;
+
+}

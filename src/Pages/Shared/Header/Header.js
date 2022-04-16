@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Nav, Navbar} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
+  const location = useLocation();
+  console.log(location)
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar-style" variant="dark">
       <Container>
@@ -12,7 +14,9 @@ const Header = () => {
           <Nav className="ms-auto">
             <div className="navigation-responsive-styles">
               <Link to="/home">Home</Link>
-              <Link to="/services">Services</Link>
+              {
+                location.pathname.includes('/home') && <a href='home#services'>Services</a>
+              }
               <Link to="/about">About</Link>
               <Link to="/blogs">Blogs</Link>
               <Link to="/login">Login</Link>
