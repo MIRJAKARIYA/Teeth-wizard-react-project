@@ -1,0 +1,14 @@
+.navigation-responsive-styles a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    margin-right: 20px;
+}
+@media screen and (max-width:991px) {
+    .navigation-responsive-styles{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:10px;
+    }
+}
