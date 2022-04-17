@@ -40,7 +40,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='registration-container'>
             <div className='form-container mb-2'>
                 <h1 className='text-center'>LogIn</h1>
                 <form onSubmit={handleUserLogIn} className='form-style'>
@@ -59,7 +59,7 @@ const Login = () => {
                 <SocialLogin></SocialLogin>
             </div>
                 
-            <Link to='/register' className='d-block text-center'>creat a new account</Link>
+            <Link to='/register' className='d-block text-center text-white'>creat a new account</Link>
         </div>
     );
 };

@@ -16,12 +16,8 @@ const Register = () => {
     const [passwordError, setPasswordError] = useState('')
     const [isHide, setIsHide] = useState(false);
     const navigate = useNavigate();
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [createUserWithEmailAndPassword,user] = useCreateUserWithEmailAndPassword(auth);
 
     const handleHideButton = () =>{
         setIsHide(!isHide);
@@ -80,7 +76,7 @@ const Register = () => {
     console.log(user)
 
     return (
-        <div>
+        <div className='registration-container'>
             <div className='form-container mb-2'>
                 <h1 className='text-center'>Register</h1>
                 <form onSubmit={handleUserCreation} className='form-style'>
@@ -108,7 +104,7 @@ const Register = () => {
                 <SocialLogin></SocialLogin>
             </div>
                 
-            <Link to='/login' className='d-block text-center'>already have an account?</Link>
+            <Link to='/login' className='d-block text-center text-white'>already have an account?</Link>
         </div>
     );
 };
