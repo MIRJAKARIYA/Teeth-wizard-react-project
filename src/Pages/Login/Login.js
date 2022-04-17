@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Pages/Shared/SocialLogin/SocialLogin';
 import { AiFillEye } from 'react-icons/ai';
@@ -16,6 +16,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const [resetError, setResetError] = useState(false)
     const [isHide, setIsHide] = useState(false);
     const navigate = useNavigate();
     const [
@@ -24,7 +25,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-      const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+      const [sendPasswordResetEmail, sending, ResetError] = useSendPasswordResetEmail(
         auth
       );
 
@@ -35,8 +36,20 @@ const Login = () => {
     const handleForgotPassword = async () =>{
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email);
-        toast("password reset email has been sent..")
+        setResetError(true);
     }
+    useEffect(()=>{
+        if(ResetError && resetError){
+            toast(ResetError.message.split('auth/').join(''))
+            setResetError(false);
+            
+        }
+        else if(!ResetError && resetError){
+            toast('password reset email has been sent successfully')
+            setResetError(false);
+        }
+    },[ResetError,resetError])
+
 
     const handleUserLogIn = (e) =>{
         e.preventDefault();
@@ -44,9 +57,11 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
     }
-    if(user){
-        navigate(from, { replace: true });
-    }
+    useEffect(()=>{
+        if(user){
+            navigate(from, { replace: true });
+        }
+    },[navigate,from,user])
     console.log(error?.message)
 
     return (

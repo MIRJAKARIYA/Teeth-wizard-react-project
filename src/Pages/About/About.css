@@ -1,0 +1,21 @@
+.main-about-page-container{
+    background-image: url('../../background-image/about-back.jpg');
+    background-color: rgba(0, 0, 0, 0.342);
+    background-blend-mode: multiply;
+    height: 100vh;
+    background-size: 200%;
+    display: flow-root;
+}
+.about-me-container{
+    color: whitesmoke;
+    margin-top: 100px;
+}
+.about-me-img{
+    width: 40%;
+    padding: 20px;
+}
+.about-me-content{
+    width: 60%;
+    padding: 30px;
+    
+}

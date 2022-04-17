@@ -4,7 +4,7 @@ import SocialLogin from '../../Pages/Shared/SocialLogin/SocialLogin';
 import './Register.css';
 import { AiFillEye } from 'react-icons/ai';
 import { AiFillEyeInvisible } from 'react-icons/ai';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
@@ -14,7 +14,6 @@ const Register = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
-    const [userVarified, loading, error] = useAuthState(auth);
     const [passwordMatchError, setPassswordMatchError] = useState('');
     const [passwordError, setPasswordError] = useState('')
     const [isHide, setIsHide] = useState(false);
