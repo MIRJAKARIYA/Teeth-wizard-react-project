@@ -6,6 +6,7 @@ import Services from './Pages/Home/Services/Services';
 import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import Login from './Pages/Login/Login';
+import Checkout from './Pages/Checkout/Checkout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/service/:serviceId' element={<Checkout></Checkout>}></Route>
       </Routes>
     </div>
   );

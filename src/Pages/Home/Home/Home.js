@@ -17,7 +17,6 @@ const Home = () => {
       setShowData(services.slice(0, 4));
     }
   }, [showAll, services]);
-  console.log(services);
   return (
     <div>
       <Banner></Banner>

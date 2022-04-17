@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
   const location = useLocation();
-  console.log(location)
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar-style" variant="dark">
       <Container>
@@ -15,7 +14,7 @@ const Header = () => {
             <div className="navigation-responsive-styles">
               <Link to="/home">Home</Link>
               {
-                location.pathname.includes('/home') && <a href='home#services'>Services</a>
+                location.pathname.includes('/home') && <a href='#services'>Services</a>
               }
               <Link to="/about">About</Link>
               <Link to="/blogs">Blogs</Link>
