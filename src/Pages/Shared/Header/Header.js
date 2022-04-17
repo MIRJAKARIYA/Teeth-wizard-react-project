@@ -14,7 +14,7 @@ const Header = () => {
             <div className="navigation-responsive-styles">
               <Link to="/home">Home</Link>
               {
-                location.pathname.includes('/home') && <a href='#services'>Services</a>
+                location.pathname === ('/home') && <a href='#services'>Services</a>
               }
               <Link to="/about">About</Link>
               <Link to="/blogs">Blogs</Link>

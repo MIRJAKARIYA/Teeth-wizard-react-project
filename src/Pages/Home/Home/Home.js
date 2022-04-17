@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import "./Home.css";
-import useServices from "../../../useServices";
+import useServices from "../../hooks/useServices";
 import SingleService from "../../Shared/SingleService/SingleService";
 import "./Home.css";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 const Home = () => {
   const services = useServices();
+  console.log(services)
   const [showAll, setShowAll] = useState(false);
   const [showData, setShowData] = useState([]);
   useEffect(() => {
@@ -16,7 +17,7 @@ const Home = () => {
     } else {
       setShowData(services.slice(0, 4));
     }
-  }, [showAll, services]);
+  }, [showAll,services]);
   return (
     <div>
       <Banner></Banner>

@@ -1,0 +1,41 @@
+.checkout-container{
+    min-height: 500px;
+    display: flex;
+    width: 80%;
+    margin: 100px auto;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+
+}
+.checkout-infomation-style{
+    width: 45%;
+    padding: 10px;
+}
+.checkout-image-style{
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.342);
+}
+.make-reservation-style{
+    width: 55%;
+    padding: 10px;
+}
+.reservation-form-container{
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.342);
+    background-color: whitesmoke;
+}
+
+.reserve-button{
+    width: 60%;
+    margin: 0 auto;
+    border: none;
+    background-color: #035397;
+    color: white;
+    padding: 8px 0;
+
+}
