@@ -1,9 +1,15 @@
 import React from "react";
 import { Container, Nav, Navbar} from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth';
 import "./Header.css";
+import defaultUserPicture from '../../../default-user-profile.png';
+import auth from "../../../firebase.init";
+import { signOut } from 'firebase/auth';
 const Header = () => {
   const location = useLocation();
+  const [user] = useAuthState(auth);
+  console.log(user)
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar-style" variant="dark">
       <Container>
@@ -18,7 +24,13 @@ const Header = () => {
               }
               <Link to="/about">About</Link>
               <Link to="/blogs">Blogs</Link>
-              <Link to="/login">Login</Link>
+              {
+                user && <img src={user.photoURL?user.photoURL:defaultUserPicture} style={{width:'40px',height:'40px'}} className="rounded-circle" alt="" />
+              }
+              {
+                user?<button onClick={()=>signOut(auth)}>sign out</button>:<Link to="/login">Login</Link>
+              }
+              
             </div>
           </Nav>
         </Navbar.Collapse>

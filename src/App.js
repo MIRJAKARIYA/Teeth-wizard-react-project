@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
 import CheckoutMore from './Pages/CheckoutMore/CheckoutMore';
 import Register from './Pages/Register/Register';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/checkoutmore/:checkoutId' element={<CheckoutMore></CheckoutMore>}></Route>
+        <Route path='/checkoutmore/:checkoutId' element={
+          <RequireAuth>
+            <CheckoutMore></CheckoutMore>
+          </RequireAuth>
+        }></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>

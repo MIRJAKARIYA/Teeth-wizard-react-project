@@ -8,12 +8,13 @@ import { useSignInWithGoogle, useSignInWithGithub, useSignInWithFacebook } from 
 
 const SocialLogin = () => {
     const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
     const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
     const [signInWithFacebook, user3, loading3, error3] = useSignInWithFacebook(auth);
     const navigate = useNavigate();
     if(user1 || user2 || user3){
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     return (
         <div className='mt-5'>

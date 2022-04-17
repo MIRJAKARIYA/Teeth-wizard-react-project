@@ -1,0 +1,11 @@
+.login-contaner{
+    position: relative;
+}
+.forget-password-style{
+    position: absolute;
+    right: 2%;
+    top: 102%;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}

@@ -1,29 +1,32 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Pages/Shared/SocialLogin/SocialLogin';
 import './Register.css';
 import { AiFillEye } from 'react-icons/ai';
 import { AiFillEyeInvisible } from 'react-icons/ai';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Register = () => {
+    const [updateProfile] = useUpdateProfile(auth);
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
+    const [userVarified, loading, error] = useAuthState(auth);
     const [passwordMatchError, setPassswordMatchError] = useState('');
     const [passwordError, setPasswordError] = useState('')
     const [isHide, setIsHide] = useState(false);
     const navigate = useNavigate();
 
-    const [createUserWithEmailAndPassword,user] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword,user] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
 
     const handleHideButton = () =>{
         setIsHide(!isHide);
     }
 
-    const handleUserCreation = (e) =>{
+    const handleUserCreation = async (e) =>{
         e.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
@@ -36,13 +39,13 @@ const Register = () => {
             return;
         }
         
-        if(password.length < 6 || password.length>8){
+        if(password.length < 6 || password.length>10){
             if(password.length<6){
                 setPasswordError('*password is too short(>=6)');
                 return;
             }
             else{
-                setPasswordError('*password is very long(<=8)');
+                setPasswordError('*password is very long(<=10)');
                 return;
             }
         }
@@ -68,12 +71,16 @@ const Register = () => {
         }
         setPassswordMatchError('');
         setPasswordError('');
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({displayName: name});
     }
-    // if(user){
-    //     navigate('/home')
-    // }
-    console.log(user)
+    useEffect(()=>{
+        if(user){
+            console.log(user)
+            navigate('/login')
+        }
+    },[navigate,user])
+
 
     return (
         <div className='registration-container'>

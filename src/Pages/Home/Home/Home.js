@@ -8,7 +8,6 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 const Home = () => {
   const services = useServices();
-  console.log(services)
   const [showAll, setShowAll] = useState(false);
   const [showData, setShowData] = useState([]);
   useEffect(() => {
