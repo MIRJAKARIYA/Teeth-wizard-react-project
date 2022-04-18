@@ -9,6 +9,10 @@
 .navigation-responsive-styles a:hover{
     color: orangered;
 }
+.navigation-responsive-styles a{
+    padding-bottom: 5px;
+}
+
 .sign-out-button{
     color: black;
     border: none;
@@ -17,6 +21,7 @@
     background-color: white;
     border-radius: 5px;
     padding: 5px 10;
+    margin-top: 10px;
     
 }
 .inactive-style{

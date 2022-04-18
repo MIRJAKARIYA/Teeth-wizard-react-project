@@ -27,7 +27,7 @@ const Header = () => {
                 user && <img src={user.photoURL?user.photoURL:defaultUserPicture} style={{width:'40px',height:'40px'}} className="rounded-circle" alt="" />
               }
               {
-                user?<button className="sign-out-button" onClick={()=>signOut(auth)}>sign out</button>:<NavLink className={({ isActive }) => isActive ? 'active-style' :'inactive-style'} to="/login">Login</NavLink>
+                user?<button className="sign-out-button ms-2" onClick={()=>signOut(auth)}>sign out</button>:<NavLink className={({ isActive }) => isActive ? 'active-style' :'inactive-style'} to="/login">Login</NavLink>
               }
             </div>
           </Nav>
