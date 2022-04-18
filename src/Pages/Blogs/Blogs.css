@@ -1,0 +1,12 @@
+.blogs-container>div{
+    width: 60%;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.507);
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #253e7e;
+    color: wheat;
+}
+.blogs-container h2{
+    text-decoration: underline;
+}

@@ -1,8 +1,8 @@
 import React from "react";
-
+import './Blogs.css';
 const Blogs = () => {
   return (
-    <div>
+    <div className="blogs-container">
       <div>
         <h2>Difference between Authentication and Authorization</h2>
         <p>
@@ -53,11 +53,11 @@ const Blogs = () => {
               <li>HID DigitalPersona.</li>
           </p>
         </div>
-        <div>
-            <h2>What other services does firebase provide other than authentication?</h2>
-            <p>Firebase is mainly used for user authentication but there are various services that firebase provides.we can use firebase Hosting to host our websites which is very efficient</p>
-        </div>
       </div>
+      <div>
+            <h2>What other services does firebase provide other than authentication?</h2>
+            <p>Firebase is mainly used for user authentication but there are various services that firebase provides.we can use firebase Hosting to host our websites which is very efficient.we can use Google analytics to know what our users are doing in our website.we can use Cloud Firestore.We can use Firebse Cloud messaging in our app.we can also use Cloud Functions,Cloud Storage etc.So there are much more thing that firebase provide us other than authentication.We can use these services as per our need.</p>
+        </div>
     </div>
   );
 };
