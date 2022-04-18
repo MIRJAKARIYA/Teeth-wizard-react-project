@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar} from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./Header.css";
 import defaultUserPicture from '../../../default-user-profile.png';
@@ -9,28 +9,26 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
   const location = useLocation();
   const [user] = useAuthState(auth);
-  console.log(user)
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar-style" variant="dark">
+    <Navbar collapseOnSelect expand="lg" className="navbar-style" variant="dark" sticky="top">
       <Container>
-        <Navbar.Brand as={Link} to='/home'>React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand as={Link} to='/home'>TEETH WIZARD</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <div className="navigation-responsive-styles">
-              <Link to="/home">Home</Link>
+              <NavLink className={({ isActive }) => isActive ? 'active-style' : 'inactive-style'} to="/home">Home</NavLink>
               {
-                location.pathname === ('/home') && <a href='#services'>Services</a>
+                location.pathname === ('/home') && <a href='#services' className="text-white">Services</a>
               }
-              <Link to="/about">About</Link>
-              <Link to="/blogs">Blogs</Link>
+              <NavLink className={({ isActive }) => isActive ? 'active-style' : 'inactive-style'} to="/about">About</NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'active-style' : 'inactive-style'} to="/blogs">Blogs</NavLink>
               {
                 user && <img src={user.photoURL?user.photoURL:defaultUserPicture} style={{width:'40px',height:'40px'}} className="rounded-circle" alt="" />
               }
               {
-                user?<button onClick={()=>signOut(auth)}>sign out</button>:<Link to="/login">Login</Link>
+                user?<button className="sign-out-button" onClick={()=>signOut(auth)}>sign out</button>:<NavLink className={({ isActive }) => isActive ? 'active-style' :'inactive-style'} to="/login">Login</NavLink>
               }
-              
             </div>
           </Nav>
         </Navbar.Collapse>

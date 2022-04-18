@@ -1,3 +1,9 @@
+.main-checkout-container{
+    background-image: url('../../background-image/checkout-back.jpg');
+    background-size: cover;
+    display: flow-root;
+    height: 100vh;
+}
 .checkout-container{
     min-height: 500px;
     display: flex;
@@ -11,17 +17,18 @@
 .checkout-infomation-style{
     width: 45%;
     padding: 10px;
+    color: white;
 }
 .checkout-image-style{
     width: 100%;
     border-radius: 20px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.342);
 }
-.make-reservation-style{
+.make-appoinment-style{
     width: 55%;
     padding: 10px;
 }
-.reservation-form-container{
+.appoinment-form-container{
     width: 60%;
     margin: 30px auto;
     padding: 20px 20px;
@@ -38,4 +45,24 @@
     color: white;
     padding: 8px 0;
 
+}
+
+@media screen and (max-width:900px){
+    .main-checkout-container{
+        height: 160vh;
+    }
+    .checkout-container{
+        flex-direction: column;
+    }
+    .checkout-infomation-style{
+        width: 100%;
+    }
+    .appoinment-form-container{
+        width:100%;
+    
+    }
+    .make-appoinment-style{
+        width: 100%;
+        padding: 0px;
+    }
 }

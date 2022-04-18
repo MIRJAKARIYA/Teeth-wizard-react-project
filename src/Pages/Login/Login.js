@@ -45,7 +45,7 @@ const Login = () => {
             
         }
         else if(!ResetError && resetError){
-            toast('password reset email has been sent successfully')
+            toast('password reset email has been sent successfully');
             setResetError(false);
         }
     },[ResetError,resetError])
@@ -61,13 +61,12 @@ const Login = () => {
         if(user){
             navigate(from, { replace: true });
         }
-    },[navigate,from,user])
-    console.log(error?.message)
+    },[navigate,from,user]);
 
     return (
         <div className='registration-container login-contaner'>
             <div className='form-container mb-2'>
-                <h1 className='text-center'>LogIn</h1>
+                <h1 className='text-center text-decoration-underline'>LogIn</h1>
                 <form onSubmit={handleUserLogIn} className='form-style'>
                     <div className='input-container'>
                         <small className='d-block'>Your Email:</small>

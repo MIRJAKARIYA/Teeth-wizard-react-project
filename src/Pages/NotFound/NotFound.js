@@ -1,9 +1,13 @@
 import React from 'react';
+import PageErrorPic from '../../notFoundpic.png';
+import './NotFound.css';
 
 const NotFound = () => {
     return (
         <div>
-            <h1>404 NOT FOUND</h1>
+            <div className='not-found-pic-container'>
+                <img src={PageErrorPic} className='img-fluid' alt="" />
+            </div>
         </div>
     );
 };

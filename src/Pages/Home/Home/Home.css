@@ -1,6 +1,9 @@
+/* .home-container{
+    background-image: url('../../../background-image/home-back.jpg');
+} */
 .services-container{
     width: 80%;
-    margin: 50px auto;
+    margin: 50px auto 20px;
     border-radius: 10px;
 }
 .show-button{
@@ -11,7 +14,21 @@
     color: #253e7e;
     font-weight: 500;
     font-size: 18px;
+
 }
+/* .show-arrow{
+    animation-name: arrowAnimate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes arrowAnimate {
+    from{transform: translateX(0px)};
+    to{transform: translateX(100px)}
+} */
+
 @media screen and (max-width: 767px) {
     .services-container{
         width: 95%;

@@ -30,12 +30,16 @@ input:focus{
     outline: none;
 }
 .extra-btn-style{
-    width: 100%;
+    width: 80%;
     padding: 5px;
     border: none;
     background-image: linear-gradient(to right ,rgb(65, 163, 179),rgb(169, 46, 185));
     color: white;
     font-weight: 600;
+    transition: 0.5s;
+}
+.extra-btn-style:hover{
+    background-position: 275px;
 }
 ::placeholder{
     color: rgb(179, 176, 176);

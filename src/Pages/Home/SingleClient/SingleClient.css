@@ -1,0 +1,24 @@
+.comment-container{
+    width: 48%;
+    background-color: rgb(48, 48, 94);
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.comment-container:hover{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+    .comment-container{
+        width: 100%;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .comment-container{
+        width: 95%;
+        margin: 10px auto;
+    }
+}

@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Form } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
+import { storeDataInLocalStorage } from "../../ManageLocalStorage/manageLocalStorage";
 import "./CheckoutMore.css";
 const CheckoutMore = () => {
   const { checkoutId } = useParams();
+  const navigate = useNavigate();
   const allServices = [
     {
       id: 1,
@@ -74,66 +76,103 @@ const CheckoutMore = () => {
     (service) => service.id === Number(checkoutId)
   );
   const { treatment, image, description, cost } = reqService;
+
+  const handleInformation = (e) => {
+    e.preventDefault();
+    const fname = e.target.fname.value;
+    const lname = e.target.lname.value;
+    const email = e.target.email.value;
+    const phone = e.target.phone.value;
+    const date = e.target.date.value;
+    const address = e.target.address.value;
+    const patientInfo = {
+      fname,
+      lname,
+      email,
+      phone,
+      date,
+      address,
+      treatment,
+      image,
+    };
+    storeDataInLocalStorage(patientInfo);
+    navigate("/appoinmentInfo");
+  };
   return (
-    <div className="checkout-container">
-      <div className="checkout-infomation-style">
-        <div>
-          <img src={image} className="checkout-image-style" alt="" />
+    <div className="main-checkout-container">
+      <div className="checkout-container">
+        <div className="checkout-infomation-style">
+          <div>
+            <img src={image} className="checkout-image-style" alt="" />
+          </div>
+          <div>
+            <h2>{treatment}</h2>
+            <p>{description}</p>
+            <p>Service cost: {"$" + cost}</p>
+          </div>
         </div>
-        <div>
-          <h2>{treatment}</h2>
-          <p>{description}</p>
-          <p>Service cost: {'$'+cost}</p>
-        </div>
-      </div>
-      <div className="make-reservation-style">
-        <h1 className="text-center">Make Reservation</h1>
-        <p className="text-center">({treatment})</p>
-        <div className="reservation-form-container">
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicFName">
-              <Form.Label>First Name:</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter First Name"
-                required
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicLName">
-              <Form.Label>Last Name:</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter Last Name"
-                required
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="email" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPhone">
-              <Form.Label>Phone Number:</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Your Phone Number"
-                required
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Reservation Date:</Form.Label>
-              <Form.Control type="date" placeholder="Enter Date" required />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Address:</Form.Label>
-              <Form.Control as="textarea" rows={2} />
-            </Form.Group>
-            <button type="submit" className="reserve-button d-block">
-              Make Appoinment
-            </button>
-          </Form>
+        <div className="make-appoinment-style">
+          <h1 className="text-center text-white">Make Appoinment</h1>
+          <p className="text-center text-white">({treatment})</p>
+          <div className="appoinment-form-container">
+            <Form onSubmit={handleInformation}>
+              <Form.Group className="mb-3" controlId="formBasicFName">
+                <Form.Label>First Name:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter First Name"
+                  name="fname"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicLName">
+                <Form.Label>Last Name:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Last Name"
+                  name="lname"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="email"
+                  name="email"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPhone">
+                <Form.Label>Phone Number:</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Your Phone Number"
+                  name="phone"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>appoinment Date:</Form.Label>
+                <Form.Control
+                  type="date"
+                  placeholder="Enter Date"
+                  name="date"
+                  required
+                />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label>Address:</Form.Label>
+                <Form.Control as="textarea" name="address" rows={2} required />
+              </Form.Group>
+              <button type="submit" className="reserve-button d-block">
+                Make Appoinment
+              </button>
+            </Form>
+          </div>
         </div>
       </div>
     </div>

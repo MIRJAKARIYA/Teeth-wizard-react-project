@@ -1,3 +1,9 @@
+.main-card-container{
+    transition:transform 0.5s;
+}
+.main-card-container:hover{
+    transform: translateY(-10px);
+}
 .card-container{
     background-color: whitesmoke;
     border-radius: 5px;
@@ -13,5 +19,10 @@
     border: none;
     color: white;
     padding: 10px 5px;
+    transition: 0.5s;
 
+}
+.checkout-more-button:hover{
+    background-color: #023b6d;
+    border-radius: 10px;
 }

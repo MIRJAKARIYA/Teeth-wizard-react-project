@@ -3,7 +3,7 @@ import MyPicture from "../../aboutJakariya.jpg";
 import "./About.css";
 import { GrFacebook } from 'react-icons/gr';
 import { BsLinkedin, } from 'react-icons/bs';
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa';
 
 const About = () => {
   return (

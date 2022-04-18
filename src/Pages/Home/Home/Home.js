@@ -3,8 +3,9 @@ import Banner from "../Banner/Banner";
 import "./Home.css";
 import useServices from "../../hooks/useServices";
 import SingleService from "../../Shared/SingleService/SingleService";
-import "./Home.css";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import HappyClients from "../HappyClients/HappyClients";
+import Footer from "../../Shared/Footer/Footer";
 
 const Home = () => {
   const services = useServices();
@@ -18,7 +19,7 @@ const Home = () => {
     }
   }, [showAll,services]);
   return (
-    <div>
+    <div className="home-container">
       <Banner></Banner>
       <div className="services-container" id="services">
         <h1 className="text-center mb-5">Services</h1>
@@ -29,9 +30,12 @@ const Home = () => {
         </div>
         <button className="show-button" onClick={() => setShowAll(!showAll)}>
           <span className="me-1">{showAll ? "Show less" : "Show more"}</span>
-          {showAll ? <BsArrowLeft /> : <BsArrowRight />}
+          <span className="show-arrow">{showAll ? <BsArrowLeft /> : <BsArrowRight />}</span>
         </button>
       </div>
+      <h2 className="text-center" style={{marginBottom: '30px'}}>Clients opinion</h2>
+      <HappyClients></HappyClients>
+      <Footer></Footer>
     </div>
   );
 };

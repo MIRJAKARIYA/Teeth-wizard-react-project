@@ -3,10 +3,31 @@
 }
 .navigation-responsive-styles a{
     text-decoration: none;
-    color: white;
     font-weight: 600;
     margin-right: 20px;
 }
+.navigation-responsive-styles a:hover{
+    color: orangered;
+}
+.sign-out-button{
+    color: black;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10;
+    
+}
+.inactive-style{
+    color: white;
+}
+
+.active-style{
+    border-bottom: 2px solid yellow;
+    color: orangered;
+}
+
 @media screen and (max-width:991px) {
     .navigation-responsive-styles{
         display: flex;

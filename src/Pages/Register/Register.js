@@ -40,32 +40,32 @@ const Register = () => {
         
         if(password.length < 6 || password.length>10){
             if(password.length<6){
-                setPasswordError('*password is too short(>=6)');
+                setPasswordError('*password is too short(pass>=6)');
                 return;
             }
             else{
-                setPasswordError('*password is very long(<=10)');
+                setPasswordError('*password is very long(pass<=10)');
                 return;
             }
         }
         const isExistsNumber = /^(?=.*[0-9])/.test(password);
         if(!isExistsNumber){
-            setPasswordError('password must have at least one number');
+            setPasswordError('*password must have at least one number');
             return;
         }
         const isExistsSpecialCharacter = /^(?=.*[!@#$%^&*])/.test(password);
         if(!isExistsSpecialCharacter){
-            setPasswordError('password must have at least one special character');
+            setPasswordError('*password must have at least one special character');
             return;
         }
         const isExistsOneSmallLetter = /^(?=.*[a-z])/.test(password);
         if(!isExistsOneSmallLetter){
-            setPasswordError('password must have at least one small letter');
+            setPasswordError('*password must have at least one small letter');
             return;
         }
         const isExistsOneUpperLetter = /^(?=.*[A-Z])/.test(password);
         if(!isExistsOneUpperLetter){
-            setPasswordError('password must have at least one upper case letter');
+            setPasswordError('*password must have at least one upper case letter');
             return;
         }
         setPassswordMatchError('');
@@ -76,7 +76,7 @@ const Register = () => {
     useEffect(()=>{
         if(user){
             console.log(user)
-            navigate('/login')
+            navigate('/home')
         }
     },[navigate,user])
 
@@ -84,7 +84,7 @@ const Register = () => {
     return (
         <div className='registration-container'>
             <div className='form-container mb-2'>
-                <h1 className='text-center'>Register</h1>
+                <h1 className='text-center text-decoration-underline'>Register</h1>
                 <form onSubmit={handleUserCreation} className='form-style'>
                     <div className='input-container'>
                         <small className='d-block'>Your Name:</small>

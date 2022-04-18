@@ -1,0 +1,59 @@
+.appoinmentInfo-main-container{
+    background-image: url('../../background-image/checkout-back.jpg');
+    background-size: cover;
+    display: flow-root;
+    height: 100vh;
+}
+.appoinment-success-container{
+    width: 100%;
+    margin: 150px auto;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.425);
+    background-color: white;
+    
+}
+.image-info-container{
+    display: flex;
+    align-items: center;
+}
+.appoinment-info-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+.appoinment-information{
+    width: 50%;
+    margin: 30px auto;
+}
+.back-home-from-appoinment-info-btn{
+    background-color: orangered;
+    border: none;
+    display: block;
+    margin: -120px auto 0;
+    padding: 3px 25px;
+    color: white;
+    font-weight: 600;
+
+}
+
+@media screen and (max-width:700px){
+    .appoinmentInfo-main-container{
+        height: 120vh;
+    }
+    .appoinment-success-container{
+        width: 90%;
+    }
+    .image-info-container{
+        flex-direction: column;
+    }
+    .appoinment-information{
+        width: 100%;
+        margin: 30px auto;
+        text-align: center;
+    }
+}
