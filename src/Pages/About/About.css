@@ -2,8 +2,8 @@
     background-image: url('../../background-image/about-back.jpg');
     background-color: rgba(0, 0, 0, 0.342);
     background-blend-mode: multiply;
-    height: 100vh;
-    background-size: 200%;
+    height: 120vh;
+    background-size: cover;
     display: flow-root;
 }
 .about-me-container{
@@ -14,8 +14,33 @@
     width: 40%;
     padding: 20px;
 }
+.my-image{
+    object-fit: cover;
+    border-radius: 10px;
+}
 .about-me-content{
     width: 60%;
     padding: 30px;
-    
+}
+
+@media screen and (max-width:1200px) {
+    .about-me-img{
+        width: 100%;
+    }
+    .about-me-content{
+        width: 100%;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:991px) {
+    .about-me-img{
+        width: 100%;
+        padding: 0;
+    }
+    .about-me-content{
+        margin-top: 5px;
+        width: 100%;
+        padding: 0;
+        font-size: 12px;
+    }
 }

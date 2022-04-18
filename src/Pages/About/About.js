@@ -1,17 +1,19 @@
 import React from "react";
 import MyPicture from "../../aboutJakariya.jpg";
 import "./About.css";
-import { GrFacebook } from 'react-icons/gr'
+import { GrFacebook } from 'react-icons/gr';
+import { BsLinkedin, } from 'react-icons/bs';
+import { FaGithub } from 'react-icons/fa'
 
 const About = () => {
   return (
     <div className="main-about-page-container">
-      <div className="d-flex p-5 flex-md-row flex-column about-me-container">
+      <div className="d-flex p-5 flex-lg-row flex-column about-me-container">
         <div className="about-me-img">
-          <img src={MyPicture} className="img-fluid" alt="" />
+          <img src={MyPicture} className="w-100 h-100 my-image" alt="" />
         </div>
         <div className="about-me-content">
-          <h1>About me</h1>
+          <h1 className="text-decoration-underline">MIR JAKARIYA</h1>
           <p>
             Greetings!!! Thank you for taking the time to look at my webpage.
             Mir Jakariya here. In 2020, I graduated from Daffodil International
@@ -49,15 +51,15 @@ const About = () => {
             and one day I hope to work with big giants such as Google, Facebook,
             and Amazon.
           </p>
-          <div>
-              <div>
-                <GrFacebook></GrFacebook>
+          <div className="d-flex">
+              <div className="me-3">
+                <a className="text-white fs-3" href="https://www.facebook.com/MIRJAKARIYA239"><GrFacebook></GrFacebook></a>
               </div>
-              <div>
-
+              <div className="me-3">
+                <a className="text-white fs-3" href="https://www.linkedin.com/in/mir-jakariya-99b777229/"><BsLinkedin></BsLinkedin></a>
               </div>
-              <div>
-                  
+              <div className="me-3">
+                  <a className="text-white fs-3" href="https://github.com/MIRJAKARIYA"><FaGithub></FaGithub></a>
               </div>
           </div>
         </div>
