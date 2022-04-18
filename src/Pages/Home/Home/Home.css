@@ -1,6 +1,8 @@
-/* .home-container{
+.home-container{
     background-image: url('../../../background-image/home-back.jpg');
-} */
+    display: flow-root;
+    
+}
 .services-container{
     width: 80%;
     margin: 50px auto 20px;
@@ -16,18 +18,6 @@
     font-size: 18px;
 
 }
-/* .show-arrow{
-    animation-name: arrowAnimate;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-}
-
-@keyframes arrowAnimate {
-    from{transform: translateX(0px)};
-    to{transform: translateX(100px)}
-} */
 
 @media screen and (max-width: 767px) {
     .services-container{

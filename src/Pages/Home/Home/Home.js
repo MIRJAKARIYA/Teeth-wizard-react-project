@@ -22,7 +22,7 @@ const Home = () => {
     <div className="home-container">
       <Banner></Banner>
       <div className="services-container" id="services">
-        <h1 className="text-center mb-5">Services</h1>
+        <h1 className="text-center mb-5 text-danger text-decoration-underline">Services</h1>
         <div className="row gy-4">
           {showData.map((service) => (
             <SingleService key={service.id} service={service}></SingleService>
@@ -33,7 +33,7 @@ const Home = () => {
           <span className="show-arrow">{showAll ? <BsArrowLeft /> : <BsArrowRight />}</span>
         </button>
       </div>
-      <h2 className="text-center" style={{marginBottom: '30px'}}>Clients opinion</h2>
+      <h2 className="text-center text-danger text-decoration-underline" style={{marginBottom: '30px'}}>Clients opinion</h2>
       <HappyClients></HappyClients>
       <Footer></Footer>
     </div>

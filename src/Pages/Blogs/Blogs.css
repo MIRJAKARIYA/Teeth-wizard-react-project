@@ -10,3 +10,7 @@
 .blogs-container h2{
     text-decoration: underline;
 }
+.blogs-container{
+    background-image: url('../../background-image/blog-back.jpg');
+    display: flow-root;
+}
