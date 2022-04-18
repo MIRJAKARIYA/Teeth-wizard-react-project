@@ -15,8 +15,8 @@ const Banner = () => {
               <img className="banner-image-style" src={banner1} alt="First slide" />
             </div>
             <div className="responsive-width-class">
-            <h3>Hello there how arsadfasdfasdfasdfsafe you</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem nam quaerat voluptate tempore ex iusto impedit aperiam, alias eum velit id neque obcaecati. Iure numquam neque cum sit? Quis, inventore.</p>
+            <h1>Hello there I am your dentist the TEETH WIZARD.</h1>
+              <h4>I am an Independent Dentist who is available 24/7.You can contact me at any time when needed</h4>
               <button className="appointment-button">Make Appoinment</button>
             </div>
           </div>
@@ -27,8 +27,8 @@ const Banner = () => {
               <img className="banner-image-style" src={banner2} alt="First slide" />
             </div>
             <div className="responsive-width-class">
-              <h3>Hello there how arsadfasdfasdfasdfsafe you</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem nam quaerat voluptate tempore ex iusto impedit aperiam, alias eum velit id neque obcaecati. Iure numquam neque cum sit? Quis, inventore.</p>
+              <h1>Something wrong with your teeth?</h1>
+              <h4>No worries the teeth wizard is here.Make an appoinment as soon as possible.I will be very happy to help you.</h4>
               <button className="appointment-button">Make Appoinment</button>
             </div>
           </div>
@@ -39,8 +39,8 @@ const Banner = () => {
               <img className="banner-image-style" src={banner3} alt="First slide" />
             </div>
             <div className="responsive-width-class">
-            <h3>Hello there how arsadfasdfasdfasdfsafe you</h3>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem nam quaerat voluptate tempore ex iusto impedit aperiam, alias eum velit id neque obcaecati. Iure numquam neque cum sit? Quis, inventore.</p>
+            <h1>Discount for previous clients!!</h1>
+              <h4>Any client who took service from me previously will be rewarded with 20% discount.So hurry up and make appoinment.</h4>
               <button className="appointment-button">Make Appoinment</button>
             </div>
           </div>
